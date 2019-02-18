@@ -1,0 +1,1 @@
+<li><a href="{{ route('home.index') }}"><i class="fa fa-home"></i> Home</a></li>
