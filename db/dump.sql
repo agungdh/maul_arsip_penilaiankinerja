@@ -3,7 +3,7 @@
 -- Host: 127.0.0.1	Database: maul
 -- ------------------------------------------------------
 -- Server version 	5.5.5-10.1.35-MariaDB
--- Date: Tue, 19 Feb 2019 13:14:11 +0700
+-- Date: Tue, 19 Feb 2019 13:15:51 +0700
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -80,9 +80,9 @@ COMMIT;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pangkat` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `golongan` varchar(255) NOT NULL,
-  `ruang` varchar(255) NOT NULL,
-  `pangkat` varchar(255) NOT NULL,
+  `golongan` varchar(191) NOT NULL,
+  `ruang` varchar(191) NOT NULL,
+  `pangkat` varchar(191) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -406,4 +406,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Tue, 19 Feb 2019 13:14:11 +0700
+-- Dump completed on: Tue, 19 Feb 2019 13:15:51 +0700
