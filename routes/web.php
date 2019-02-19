@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('template.template');
 });
+
+Route::resources([
+	'/jabatan' => 'JabatanController',
+]);

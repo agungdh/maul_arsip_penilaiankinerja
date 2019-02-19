@@ -1,0 +1,1 @@
+<li><a href="{{ route('jabatan.index') }}"><i class="fa fa-home"></i> Jabatan</a></li>

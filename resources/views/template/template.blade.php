@@ -122,11 +122,7 @@
     <!-- Main content -->
     <section class="content">
 
-      <!-- Default box -->
-      <div class="box">
-        @yield('content')
-      </div>
-      <!-- /.box -->
+      @yield('content')
 
     </section>
     <!-- /.content -->
