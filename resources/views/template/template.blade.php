@@ -157,5 +157,10 @@ $(function () {
 <!-- AdminLTE App -->
 <script src="{{asset('assets')}}/AdminLTE-2.4.5/dist/js/adminlte.min.js"></script>
 @yield('js')
+@if(session('alert'))
+<script type="text/javascript">
+    swal('{{ session('alert')['title'] }}', '{{ session('alert')['message'] }}', '{{ session('alert')['class'] }}');
+</script>
+@endif
 </body>
 </html>

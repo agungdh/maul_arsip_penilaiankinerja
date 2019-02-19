@@ -37,7 +37,11 @@ class JabatanController extends Controller
 
         Jabatan::create($data);
 
-        return redirect()->route('jabatan.index');
+        return redirect()->route('jabatan.index')->with('alert', [
+                'title' => 'BERHASIL !!!',
+                'message' => 'Berhasil Tambah Data',
+                'class' => 'success',
+            ]);
     }
 
     public function edit($id)
@@ -58,13 +62,21 @@ class JabatanController extends Controller
 
         Jabatan::where(['id' => $id])->update($data);
 
-        return redirect()->route('jabatan.index');
+        return redirect()->route('jabatan.index')->with('alert', [
+                'title' => 'BERHASIL !!!',
+                'message' => 'Berhasil Ubah Data',
+                'class' => 'success',
+            ]);
     }
 
     public function destroy($id)
     {
         Jabatan::where(['id' => $id])->delete();
 
-        return redirect()->route('jabatan.index');
+        return redirect()->route('jabatan.index')->with('alert', [
+                'title' => 'BERHASIL !!!',
+                'message' => 'Berhasil Hapus Data',
+                'class' => 'success',
+            ]);
     }
 }
