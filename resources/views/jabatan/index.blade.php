@@ -28,7 +28,13 @@ Jabatan
                 	@foreach($jabatan as $item)
                 	<tr>
                 		<td>{{$item->jabatan}}</td>
-                		<td>{{$item->jabatan}}</td>
+                		
+                		<td>
+                			<a class="btn btn-success btn-sm" href="<?php echo base_url('pegawai/ubah_pegawai/'.$item->nip); ?>">
+			                  <i class="glyphicon glyphicon-pencil"></i>  Edit
+			                </a>
+			                <a onclick="return konfirmasi()" class="btn btn-danger btn-sm" href="<?php echo base_url('pegawai/hapus_pegawai/'.$item->nip); ?>"><i class="glyphicon glyphicon-trash"></i>  Hapus</a>	
+                		</td>
                 	</tr>
                 	@endforeach
                 </tbody>
