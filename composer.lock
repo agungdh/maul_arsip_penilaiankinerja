@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "04566e5ec1290d0366c54e7368e62db6",
+    "content-hash": "43410a20e3dd42b98b75ae45bfcba79b",
     "packages": [
         {
             "name": "agungdh/pustaka",
@@ -584,6 +584,60 @@
                 "url"
             ],
             "time": "2018-12-04T20:46:45+00:00"
+        },
+        {
+            "name": "ifsnop/mysqldump-php",
+            "version": "v2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ifsnop/mysqldump-php.git",
+                "reference": "d830857e93c3f309fd63768c0fe6d13d9240fc70"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ifsnop/mysqldump-php/zipball/d830857e93c3f309fd63768c0fe6d13d9240fc70",
+                "reference": "d830857e93c3f309fd63768c0fe6d13d9240fc70",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ifsnop\\": "src/Ifsnop/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Diego Torres",
+                    "homepage": "https://github.com/ifsnop",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP version of mysqldump cli that comes with MySQL",
+            "homepage": "https://github.com/ifsnop/mysqldump-php",
+            "keywords": [
+                "PHP7",
+                "database",
+                "hhvm",
+                "mariadb",
+                "mysql",
+                "mysql-backup",
+                "mysqldump",
+                "pdo",
+                "php",
+                "php5",
+                "sql"
+            ],
+            "time": "2018-12-27T00:33:19+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -3113,6 +3167,44 @@
                 "dump"
             ],
             "time": "2019-01-30T11:44:30+00:00"
+        },
+        {
+            "name": "thamaraiselvam/mysql-import",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thamaraiselvam/mysql-import.git",
+                "reference": "a69f1c36d9bc3dd751235b1f0f193c749c8aa7fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thamaraiselvam/mysql-import/zipball/a69f1c36d9bc3dd751235b1f0f193c749c8aa7fb",
+                "reference": "a69f1c36d9bc3dd751235b1f0f193c749c8aa7fb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Thamaraiselvam\\MysqlImport\\": "/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "thamaraiselvam",
+                    "email": "thamaraiselvam@live.com",
+                    "homepage": "https://thamaraiselvam.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Import .sql file into a database using mysqli",
+            "time": "2018-08-03T09:45:59+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
