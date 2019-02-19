@@ -19,4 +19,23 @@ class JabatanController extends Controller
                 ->with('pustaka', $this->pustaka);
     }
 
+    public function create()
+    {
+      return view('jabatan.create')
+                ->with('pustaka', $this->pustaka);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'jabatan' => 'required',
+        ]);
+
+        $data = $request->only('jabatan');
+
+        Jabatan::create($data);
+
+        return redirect()->route('jabatan.index');
+    }
+
 }
