@@ -13,10 +13,10 @@ Jabatan
 	<div class="col-md-12">
 		<div class="box box-primary">
 			<div class="box-header with-border">
-				<h3 class="box-title">Tambah Jabatan</h3>
+				<h3 class="box-title">Ubah Jabatan</h3>
 			</div>
 
-			{!! Form::open(['route' => 'jabatan.store', 'role' => 'form']) !!}
+			{!! Form::model($jabatan, ['route' => ['jabatan.update', $jabatan->id], 'role' => 'form']) !!}
 				@include('jabatan.form')
 
 				<div class="box-footer">

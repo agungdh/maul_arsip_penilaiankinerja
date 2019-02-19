@@ -13,11 +13,14 @@ Jabatan
 	<div class="col-md-12">
 		<div class="box">
             <div class="box-header">
-              <h3 class="box-title">Hover Data Table</h3>
+              <h3 class="box-title">Data Jabatan</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover datatable">
+            	<a class="btn btn-success btn-sm" href="{{route('jabatan.create')}}">
+                  <i class="glyphicon glyphicon-plus"></i> Tambah
+                </a><br><br>
+              <table class="table table-bordered table-hover datatable">
                 <thead>
 	                <tr>
 	                  <th>Jabatan</th>
@@ -30,10 +33,10 @@ Jabatan
                 		<td>{{$item->jabatan}}</td>
                 		
                 		<td>
-                			<a class="btn btn-success btn-sm" href="<?php echo base_url('pegawai/ubah_pegawai/'.$item->nip); ?>">
-			                  <i class="glyphicon glyphicon-pencil"></i>  Edit
+                			<a class="btn btn-primary btn-sm" href="{{route('jabatan.edit', $item->id)}}">
+			                  <i class="glyphicon glyphicon-pencil"></i> Edit
 			                </a>
-			                <a onclick="return konfirmasi()" class="btn btn-danger btn-sm" href="<?php echo base_url('pegawai/hapus_pegawai/'.$item->nip); ?>"><i class="glyphicon glyphicon-trash"></i>  Hapus</a>	
+			                <a onclick="return konfirmasi()" class="btn btn-danger btn-sm" href=""><i class="glyphicon glyphicon-trash"></i> Hapus</a>	
                 		</td>
                 	</tr>
                 	@endforeach

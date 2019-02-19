@@ -40,4 +40,12 @@ class JabatanController extends Controller
         return redirect()->route('jabatan.index');
     }
 
+    public function edit($id)
+    {
+        $jabatan = Jabatan::find($id);
+
+        return view('jabatan.edit', compact(['jabatan']))
+                ->with('pustaka', $this->pustaka);
+    }
+
 }
