@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/Ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -140,6 +142,14 @@
 <script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript">
+$(function () {
+  $('.datatable').DataTable();
+})
+</script>
 <!-- AdminLTE App -->
 <script src="{{asset('assets')}}/AdminLTE-2.4.5/dist/js/adminlte.min.js"></script>
 @yield('js')

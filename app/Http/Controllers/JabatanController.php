@@ -15,13 +15,15 @@ class JabatanController extends Controller
 
     public function index()
     {
-      return view('jabatan.index')
+        $jabatan = Jabatan::all();
+
+        return view('jabatan.index', compact(['jabatan']))
                 ->with('pustaka', $this->pustaka);
     }
 
     public function create()
     {
-      return view('jabatan.create')
+        return view('jabatan.create')
                 ->with('pustaka', $this->pustaka);
     }
 
