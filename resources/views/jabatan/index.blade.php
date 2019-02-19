@@ -33,10 +33,14 @@ Jabatan
                 		<td>{{$item->jabatan}}</td>
                 		
                 		<td>
-                			<a class="btn btn-primary btn-sm" href="{{route('jabatan.edit', $item->id)}}">
-			                  <i class="glyphicon glyphicon-pencil"></i> Edit
-			                </a>
-			                <a onclick="return konfirmasi()" class="btn btn-danger btn-sm" href=""><i class="glyphicon glyphicon-trash"></i> Hapus</a>	
+
+			                {!! Form::open(['id' => 'formHapus' . $item->id, 'route' => ['jabatan.destroy', $item->id], 'method' => 'delete']) !!}
+	                			<a class="btn btn-primary btn-sm" href="{{route('jabatan.edit', $item->id)}}">
+				                  <i class="glyphicon glyphicon-pencil"></i> Edit
+				                </a>
+
+			              		<button type="button" class="btn btn-danger btn-sm" onclick="hapus('{{ $item->id }}')"><i class="glyphicon glyphicon-trash"></i> Hapus</button>
+			              	{!! Form::close() !!}
                 		</td>
                 	</tr>
                 	@endforeach
@@ -47,4 +51,21 @@ Jabatan
           </div>
 	</div>
 </div>
+@endsection
+
+@section('js')
+<script type="text/javascript">
+function hapus(id) {
+	swal({
+	  title: "Yakin Hapus ???",
+	  text: "Data yang sudah dihapus tidak dapat dikembalikan lagi !!!",
+	  type: "warning",
+	  showCancelButton: true,
+	  confirmButtonColor: "#DD6B55",
+	  confirmButtonText: "Hapus",
+	}, function(){
+	  $("#formHapus" + id).submit();
+	});
+}
+</script>
 @endsection

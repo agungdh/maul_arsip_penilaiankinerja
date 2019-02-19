@@ -16,7 +16,7 @@ Jabatan
 				<h3 class="box-title">Ubah Jabatan</h3>
 			</div>
 
-			{!! Form::model($jabatan, ['route' => ['jabatan.update', $jabatan->id], 'role' => 'form']) !!}
+			{!! Form::model($jabatan, ['route' => ['jabatan.update', $jabatan->id], 'role' => 'form', 'method' => 'put']) !!}
 				@include('jabatan.form')
 
 				<div class="box-footer">

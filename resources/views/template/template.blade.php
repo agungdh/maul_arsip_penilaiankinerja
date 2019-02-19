@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/Ionicons/css/ionicons.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- SweetAlert -->
+  <link rel="stylesheet" href="{{asset('assets')}}/sweetalert-1.1.3/dist/sweetalert.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -142,6 +144,8 @@
 <script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- SweetAlert -->
+<script src="{{asset('assets')}}/sweetalert-1.1.3/dist/sweetalert.min.js"></script>
 <!-- DataTables -->
 <script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>

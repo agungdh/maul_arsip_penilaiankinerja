@@ -48,4 +48,23 @@ class JabatanController extends Controller
                 ->with('pustaka', $this->pustaka);
     }
 
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'jabatan' => 'required',
+        ]);
+
+        $data = $request->only('jabatan');
+
+        Jabatan::where(['id' => $id])->update($data);
+
+        return redirect()->route('jabatan.index');
+    }
+
+    public function destroy($id)
+    {
+        Jabatan::where(['id' => $id])->delete();
+
+        return redirect()->route('jabatan.index');
+    }
 }
