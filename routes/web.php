@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('template.template');
 });
 
+Route::get('/test/nilai/{nilai}', function ($nilai) {
+    echo \App\Helper\Nilai::keterangan($nilai);
+});
+
 Route::resources([
 	'/jabatan' => 'JabatanController',
 	'/unit' => 'UnitController',
