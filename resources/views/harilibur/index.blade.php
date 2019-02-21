@@ -80,7 +80,16 @@ function hapus(id) {
 </script>
 <script type="text/javascript">
 $(function() {
-  $('#kalender').fullCalendar();
+  $('#kalender').fullCalendar({
+    events: [
+        @foreach($harilibur as $item)
+        {
+          title  : '{{$item->keterangan}}',
+          start  : '{{$item->tanggal}}'
+        },
+        @endforeach
+    ]
+  });
 });
 </script>
 @endsection

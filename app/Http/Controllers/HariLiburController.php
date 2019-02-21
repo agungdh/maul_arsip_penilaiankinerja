@@ -24,7 +24,9 @@ class HariLiburController extends Controller
 
     public function create()
     {
-        return view('harilibur.create')
+        $hariliburs = HariLibur::all();
+
+        return view('harilibur.create', compact(['hariliburs']))
                 ->with('pustaka', $this->pustaka);
     }
 
@@ -59,10 +61,12 @@ class HariLiburController extends Controller
 
     public function edit($id)
     {
+        $hariliburs = HariLibur::all();
+
         $harilibur = HariLibur::find($id);
         $harilibur->tanggal = $this->pustaka->tanggalIndo($harilibur->tanggal);
 
-        return view('harilibur.edit', compact(['harilibur']))
+        return view('harilibur.edit', compact(['harilibur', 'hariliburs']))
                 ->with('pustaka', $this->pustaka);
     }
 

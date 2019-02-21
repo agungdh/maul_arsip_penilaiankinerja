@@ -10,7 +10,7 @@ Hari Libur
 
 @section('content')
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-md-6">
 		<div class="box box-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title">Ubah Hari Libur</h3>
@@ -26,5 +26,30 @@ Hari Libur
 			{!! Form::close() !!}
 		</div>
 	</div>
+
+	<div class="col-md-6">
+      <div class="box box-primary">
+        <div class="box-body">
+          <div id="kalender"></div>
+        </div>
+      </div>
+    </div>
 </div>
+@endsection
+
+@section('js')
+<script type="text/javascript">
+$(function() {
+  $('#kalender').fullCalendar({
+    events: [
+        @foreach($hariliburs as $item)
+        {
+          title  : '{{$item->keterangan}}',
+          start  : '{{$item->tanggal}}'
+        },
+        @endforeach
+    ]
+  });
+});
+</script>
 @endsection
