@@ -60,6 +60,62 @@ Hari Libur
         </div>
       </div>
     </div>
+
+    {!! Form::model($inputs, ['route' => ['harilibur.index'], 'role' => 'form', 'method' => 'get']) !!}
+
+    <div class="col-md-6">
+      <div class="box box-primary">
+        <div class="box-body">
+          <div class="box-body">
+
+            @php
+            $class = $errors->has('tanggal') ? 'form-group has-error' : 'form-group';
+            $message = $errors->has('tanggal') ? '<span class="help-block">' . $errors->first('tanggal') . '</span>' : '';
+            @endphp
+            <div class="{{$class}}">
+                <label for="tanggal">Tanggal</label>
+                {!! Form::text('tanggal',null,['class'=> 'form-control datepicker','placeholder'=>'Isi Tanggal', 'id' => 'tanggal', 'readonly' => true, 'style' => 'background-color: white;']) !!}
+                {!! $message !!}
+            </div>
+
+            @php
+            $class = $errors->has('durasi') ? 'form-group has-error' : 'form-group';
+            $message = $errors->has('durasi') ? '<span class="help-block">' . $errors->first('durasi') . '</span>' : '';
+            @endphp
+            <div class="{{$class}}">
+                <label for="durasi">Durasi (hari)</label>
+                {!! Form::number('durasi',null,['class'=> 'form-control','placeholder'=>'Isi Durasi (hari)', 'id' => 'durasi']) !!}
+                {!! $message !!}
+            </div>
+
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="box box-primary">
+        <div class="box-body">
+
+            @php
+            $class = $errors->has('deadline') ? 'form-group has-error' : 'form-group';
+            $message = $errors->has('deadline') ? '<span class="help-block">' . $errors->first('deadline') . '</span>' : '';
+            @endphp
+            <div class="{{$class}}">
+                <label for="deadline">Deadline</label>
+                {!! Form::text('deadline',$deadline,['class'=> 'form-control','placeholder'=>'Isi Deadline', 'id' => 'deadline', 'readonly' => true]) !!}
+                {!! $message !!}
+            </div>
+
+        </div>
+
+        <div class="box-footer">
+            <button type="submit" class="btn btn-success">Hitung</button>
+        </div>
+      </div>
+    </div>
+
+    {!! Form::close() !!}
 </div>
 @endsection
 

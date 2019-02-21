@@ -3,7 +3,7 @@
 -- Host: 127.0.0.1	Database: maul
 -- ------------------------------------------------------
 -- Server version 	5.5.5-10.1.35-MariaDB
--- Date: Thu, 21 Feb 2019 11:04:56 +0700
+-- Date: Thu, 21 Feb 2019 11:32:42 +0700
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -28,7 +28,7 @@ CREATE TABLE `hari_libur` (
   `keterangan` varchar(191) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `tanggal` (`tanggal`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,11 +38,12 @@ CREATE TABLE `hari_libur` (
 LOCK TABLES `hari_libur` WRITE;
 /*!40000 ALTER TABLE `hari_libur` DISABLE KEYS */;
 SET autocommit=0;
+INSERT INTO `hari_libur` VALUES (13,'2019-02-21','d hdfh');
 /*!40000 ALTER TABLE `hari_libur` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
 
--- Dumped table `hari_libur` with 0 row(s)
+-- Dumped table `hari_libur` with 1 row(s)
 --
 
 --
@@ -437,4 +438,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Thu, 21 Feb 2019 11:04:56 +0700
+-- Dump completed on: Thu, 21 Feb 2019 11:32:42 +0700

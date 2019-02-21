@@ -14,11 +14,24 @@ class HariLiburController extends Controller
         $this->pustaka = new \agungdh\Pustaka;
     }
 
-    public function index()
+    public function index(Request $request)
     {
+
+        $inputs = $request->all();
+
         $harilibur = HariLibur::all();
 
-        return view('harilibur.index', compact(['harilibur']))
+        if ($inputs['tanggal'] != null && $inputs['durasi'] != null) {
+            $date=date_create($this->pustaka->parseTanggalIndo($inputs['tanggal']));
+            date_add($date,date_interval_create_from_date_string("{$inputs["durasi"]} days"));
+            $date = date_format($date,"Y-m-d");
+            $deadline = $this->pustaka->tanggalIndo($date);
+        } else {
+            $deadline = '';
+        }
+
+
+        return view('harilibur.index', compact(['harilibur', 'inputs', 'deadline']))
                 ->with('pustaka', $this->pustaka);
     }
 
