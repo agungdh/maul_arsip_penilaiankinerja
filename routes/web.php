@@ -21,5 +21,7 @@ Route::resources([
 	'/pangkat' => 'PangkatController',
 	'/pegawai' => 'PegawaiController',
 	'/satuanwaktu' => 'SatuanWaktuController',
+	// TEST
 	'/harilibur' => 'HariLiburController',
+	// TEST
 ]);
