@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- SweetAlert -->
   <link rel="stylesheet" href="{{asset('assets')}}/sweetalert-1.1.3/dist/sweetalert.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/select2/dist/css/select2.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -144,6 +146,8 @@
 <script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Select2 -->
+<script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/select2/dist/js/select2.full.min.js"></script>
 <!-- SweetAlert -->
 <script src="{{asset('assets')}}/sweetalert-1.1.3/dist/sweetalert.min.js"></script>
 <!-- DataTables -->
@@ -152,6 +156,7 @@
 <script type="text/javascript">
 $(function () {
   $('.datatable').DataTable();
+  $('.select2').select2();
 })
 </script>
 <!-- AdminLTE App -->

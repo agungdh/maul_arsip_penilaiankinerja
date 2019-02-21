@@ -17,4 +17,19 @@ class Pegawai extends Model
                             'id_pangkat',
     						'id_unit',
     					];
+
+    public function jabatan()
+    {
+        return $this->belongsTo('App\Jabatan','id_jabatan');
+    }     
+
+    public function unit()
+    {
+        return $this->belongsTo('App\Unit','id_unit');
+    }     
+
+    public function pangkat()
+    {
+        return $this->belongsTo('App\Pangkat','id_pangkat');
+    }     
 }
