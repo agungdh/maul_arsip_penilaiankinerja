@@ -3,7 +3,7 @@
 -- Host: 127.0.0.1	Database: maul
 -- ------------------------------------------------------
 -- Server version 	5.5.5-10.1.35-MariaDB
--- Date: Tue, 19 Feb 2019 13:15:51 +0700
+-- Date: Thu, 21 Feb 2019 09:52:36 +0700
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -84,7 +84,7 @@ CREATE TABLE `pangkat` (
   `ruang` varchar(191) NOT NULL,
   `pangkat` varchar(191) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,7 +122,7 @@ CREATE TABLE `pegawai` (
   CONSTRAINT `pegawai_ibfk_1` FOREIGN KEY (`id_jabatan`) REFERENCES `jabatan` (`id`),
   CONSTRAINT `pegawai_ibfk_2` FOREIGN KEY (`id_pangkat`) REFERENCES `pangkat` (`id`),
   CONSTRAINT `pegawai_ibfk_3` FOREIGN KEY (`id_unit`) REFERENCES `unit` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,11 +132,12 @@ CREATE TABLE `pegawai` (
 LOCK TABLES `pegawai` WRITE;
 /*!40000 ALTER TABLE `pegawai` DISABLE KEYS */;
 SET autocommit=0;
+INSERT INTO `pegawai` VALUES (2,'1234','1234',5,3,2),(3,'1234','12344',5,3,2);
 /*!40000 ALTER TABLE `pegawai` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
 
--- Dumped table `pegawai` with 0 row(s)
+-- Dumped table `pegawai` with 2 row(s)
 --
 
 --
@@ -216,7 +217,7 @@ CREATE TABLE `satuan_waktu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `satuan_waktu` varchar(191) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -226,12 +227,12 @@ CREATE TABLE `satuan_waktu` (
 LOCK TABLES `satuan_waktu` WRITE;
 /*!40000 ALTER TABLE `satuan_waktu` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `satuan_waktu` VALUES (1,'Hari'),(2,'Minggu'),(3,'Bulan'),(4,'Tahun');
+INSERT INTO `satuan_waktu` VALUES (1,'Hari'),(2,'Minggu'),(3,'Bulan'),(4,'Tahun'),(6,'Jam'),(7,'Menit'),(8,'Detik');
 /*!40000 ALTER TABLE `satuan_waktu` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
 
--- Dumped table `satuan_waktu` with 4 row(s)
+-- Dumped table `satuan_waktu` with 7 row(s)
 --
 
 --
@@ -318,7 +319,7 @@ CREATE TABLE `unit` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `unit` varchar(191) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -328,11 +329,12 @@ CREATE TABLE `unit` (
 LOCK TABLES `unit` WRITE;
 /*!40000 ALTER TABLE `unit` DISABLE KEYS */;
 SET autocommit=0;
+INSERT INTO `unit` VALUES (2,'test 2');
 /*!40000 ALTER TABLE `unit` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
 
--- Dumped table `unit` with 0 row(s)
+-- Dumped table `unit` with 1 row(s)
 --
 
 --
@@ -406,4 +408,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Tue, 19 Feb 2019 13:15:51 +0700
+-- Dump completed on: Thu, 21 Feb 2019 09:52:36 +0700
