@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/Ionicons/css/ionicons.min.css">
+  <!-- fullCalendar -->
+  <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/fullcalendar/dist/fullcalendar.min.css">
+  <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
   <!-- DataTables -->
   <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- SweetAlert -->
@@ -158,6 +161,10 @@
 <!-- DataTables -->
 <script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- fullCalendar -->
+<script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/moment/moment.js"></script>
+<script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+<script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/fullcalendar/dist/locale/id.js"></script>
 <script type="text/javascript">
 $(function () {
   $('.datatable').DataTable();

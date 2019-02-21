@@ -12,5 +12,6 @@ class HariLibur extends Model
 
     protected $fillable = [
                             'tanggal',
+                            'keterangan',
     					];
 }

@@ -10,7 +10,7 @@ Hari Libur
 
 @section('content')
 <div class="row">
-	<div class="col-md-12">
+	<div class="col-md-6">
 		<div class="box box-primary">
             <div class="box-header">
               <h3 class="box-title">Data Hari Libur</h3>
@@ -23,7 +23,8 @@ Hari Libur
               <table class="table table-bordered table-hover datatable">
                 <thead>
 	                <tr>
-	                  <th>Tanggal</th>
+                      <th>Tanggal</th>
+	                  <th>Keterangan</th>
 	                  <th>Proses</th>
 	                </tr>
                 </thead>
@@ -31,7 +32,8 @@ Hari Libur
                 	@foreach($harilibur as $item)
                 	<tr>
                 		<td>{{$pustaka->tanggalIndo($item->tanggal)}}</td>
-                		
+                		<td>{{$item->keterangan}}</td>
+
                 		<td>
 
 			                {!! Form::open(['id' => 'formHapus' . $item->id, 'route' => ['harilibur.destroy', $item->id], 'method' => 'delete']) !!}
@@ -50,6 +52,14 @@ Hari Libur
             <!-- /.box-body -->
           </div>
 	</div>
+
+    <div class="col-md-6">
+      <div class="box box-primary">
+        <div class="box-body">
+          <div id="kalender"></div>
+        </div>
+      </div>
+    </div>
 </div>
 @endsection
 
@@ -67,5 +77,10 @@ function hapus(id) {
 	  $("#formHapus" + id).submit();
 	});
 }
+</script>
+<script type="text/javascript">
+$(function() {
+  $('#kalender').fullCalendar();
+});
 </script>
 @endsection

@@ -34,7 +34,7 @@ class HariLiburController extends Controller
             'tanggal' => 'required',
         ]);
 
-        $data = $request->only('tanggal');
+        $data = $request->only('tanggal', 'keterangan');
         $data['tanggal'] = $this->pustaka->parseTanggalIndo($data['tanggal']);
 
         $validator = Validator::make($data, [
@@ -74,7 +74,7 @@ class HariLiburController extends Controller
             'tanggal' => 'required',
         ]);
 
-        $data = $request->only('tanggal');
+        $data = $request->only('tanggal', 'keterangan');
         $data['tanggal'] = $this->pustaka->parseTanggalIndo($data['tanggal']);
 
         if ($data['tanggal'] != $harilibur->tanggal) {
