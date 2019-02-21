@@ -3,7 +3,7 @@
 -- Host: 127.0.0.1	Database: maul
 -- ------------------------------------------------------
 -- Server version 	5.5.5-10.1.35-MariaDB
--- Date: Thu, 21 Feb 2019 11:32:42 +0700
+-- Date: Thu, 21 Feb 2019 11:45:47 +0700
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -15,6 +15,34 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `detail_template_perilaku_kerja`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `detail_template_perilaku_kerja` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_template_perilaku_kerja` int(11) NOT NULL,
+  `perilaku_kerja` varchar(191) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `detail_template_perilaku_kerja`
+--
+
+LOCK TABLES `detail_template_perilaku_kerja` WRITE;
+/*!40000 ALTER TABLE `detail_template_perilaku_kerja` DISABLE KEYS */;
+SET autocommit=0;
+/*!40000 ALTER TABLE `detail_template_perilaku_kerja` ENABLE KEYS */;
+UNLOCK TABLES;
+COMMIT;
+
+-- Dumped table `detail_template_perilaku_kerja` with 0 row(s)
+--
 
 --
 -- Table structure for table `hari_libur`
@@ -299,6 +327,34 @@ COMMIT;
 --
 
 --
+-- Table structure for table `template_perilaku_kerja`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `template_perilaku_kerja` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `keterangan` varchar(191) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `template_perilaku_kerja`
+--
+
+LOCK TABLES `template_perilaku_kerja` WRITE;
+/*!40000 ALTER TABLE `template_perilaku_kerja` DISABLE KEYS */;
+SET autocommit=0;
+INSERT INTO `template_perilaku_kerja` VALUES (2,'Standar 2019'),(3,'Test 123');
+/*!40000 ALTER TABLE `template_perilaku_kerja` ENABLE KEYS */;
+UNLOCK TABLES;
+COMMIT;
+
+-- Dumped table `template_perilaku_kerja` with 2 row(s)
+--
+
+--
 -- Table structure for table `tugas_pokok`
 --
 
@@ -438,4 +494,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Thu, 21 Feb 2019 11:32:42 +0700
+-- Dump completed on: Thu, 21 Feb 2019 11:45:47 +0700
