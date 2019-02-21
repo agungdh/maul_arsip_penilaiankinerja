@@ -1,0 +1,1 @@
+<li><a href="{{ route('pangkat.index') }}"><i class="fa fa-home"></i> Pangkat</a></li>

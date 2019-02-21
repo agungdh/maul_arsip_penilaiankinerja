@@ -1,1 +1,1 @@
-<li><a href="{{ route('unit.index') }}"><i class="fa fa-home"></i> Unit</a></li>
+<li><a href="{{ route('unit.index') }}"><i class="fa fa-home"></i> Unit Kerja</a></li>

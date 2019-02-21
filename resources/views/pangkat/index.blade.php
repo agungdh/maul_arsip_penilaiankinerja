@@ -1,11 +1,11 @@
 @extends('template.template')
 
 @section('title')
-Unit Kerja
+Pangkat
 @endsection
 
 @section('nav')
-@include('unit.nav')
+@include('pangkat.nav')
 @endsection
 
 @section('content')
@@ -13,29 +13,29 @@ Unit Kerja
 	<div class="col-md-12">
 		<div class="box box-primary">
             <div class="box-header">
-              <h3 class="box-title">Data Unit Kerja</h3>
+              <h3 class="box-title">Data Pangkat</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-            	<a class="btn btn-success btn-sm" href="{{route('unit.create')}}">
+            	<a class="btn btn-success btn-sm" href="{{route('pangkat.create')}}">
                   <i class="glyphicon glyphicon-plus"></i> Tambah
                 </a><br><br>
               <table class="table table-bordered table-hover datatable">
                 <thead>
 	                <tr>
-	                  <th>Unit Kerja</th>
+	                  <th>Pangkat</th>
 	                  <th>Proses</th>
 	                </tr>
                 </thead>
                 <tbody>
-                	@foreach($unit as $item)
+                	@foreach($pangkat as $item)
                 	<tr>
-                		<td>{{$item->unit}}</td>
+                		<td>{{$item->golongan . $item->ruang}} {{$item->pangkat}}</td>
                 		
                 		<td>
 
-			                {!! Form::open(['id' => 'formHapus' . $item->id, 'route' => ['unit.destroy', $item->id], 'method' => 'delete']) !!}
-	                			<a class="btn btn-primary btn-sm" href="{{route('unit.edit', $item->id)}}">
+			                {!! Form::open(['id' => 'formHapus' . $item->id, 'route' => ['pangkat.destroy', $item->id], 'method' => 'delete']) !!}
+	                			<a class="btn btn-primary btn-sm" href="{{route('pangkat.edit', $item->id)}}">
 				                  <i class="glyphicon glyphicon-pencil"></i> Edit
 				                </a>
 

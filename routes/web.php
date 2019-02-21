@@ -18,4 +18,5 @@ Route::get('/', function () {
 Route::resources([
 	'/jabatan' => 'JabatanController',
 	'/unit' => 'UnitController',
+	'/pangkat' => 'PangkatController',
 ]);
