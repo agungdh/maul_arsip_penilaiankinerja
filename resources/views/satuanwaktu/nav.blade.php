@@ -1,0 +1,1 @@
+<li><a href="{{ route('satuanwaktu.index') }}"><i class="fa fa-home"></i> Satuan Waktu</a></li>

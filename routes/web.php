@@ -20,4 +20,5 @@ Route::resources([
 	'/unit' => 'UnitController',
 	'/pangkat' => 'PangkatController',
 	'/pegawai' => 'PegawaiController',
+	'/satuanwaktu' => 'SatuanWaktuController',
 ]);
