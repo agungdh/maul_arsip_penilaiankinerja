@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="{{asset('assets')}}/sweetalert-1.1.3/dist/sweetalert.css">
   <!-- Select2 -->
   <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/select2/dist/css/select2.min.css">
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('assets')}}/AdminLTE-2.4.5/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -148,6 +150,9 @@
 <script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Select2 -->
 <script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/select2/dist/js/select2.full.min.js"></script>
+<!-- bootstrap datepicker -->
+<script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="{{asset('assets')}}/AdminLTE-2.4.5/bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.id.min.js"></script>
 <!-- SweetAlert -->
 <script src="{{asset('assets')}}/sweetalert-1.1.3/dist/sweetalert.min.js"></script>
 <!-- DataTables -->
@@ -157,6 +162,11 @@
 $(function () {
   $('.datatable').DataTable();
   $('.select2').select2();
+  $('.datepicker').datepicker({
+    format: 'dd-mm-yyyy',
+    autoclose: true,
+    language: 'id'
+  });
 })
 </script>
 <!-- AdminLTE App -->
