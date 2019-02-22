@@ -11,6 +11,30 @@ Detail Template Perilaku Kerja
 @section('content')
 <div class="row">
 	<div class="col-md-12">
+        <div class="box box-primary">
+            <div class="box-header">
+              <h3 class="box-title">Data Template Perilaku Kerja</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                      <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{$templateperilakukerja->keterangan}}</td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+    </div>
+
+    <div class="col-md-12">
 		<div class="box box-primary">
             <div class="box-header">
               <h3 class="box-title">Data Detail Template Perilaku Kerja</h3>

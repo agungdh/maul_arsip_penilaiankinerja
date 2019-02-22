@@ -17,8 +17,8 @@ class DetailTemplatePerilakuKerjaController extends Controller
     public function index($id_template_perilaku_kerja)
     {
         $templateperilakukerja = TemplatePerilakuKerja::find($id_template_perilaku_kerja);
-        $detailtemplateperilakukerja = DetailTemplatePerilakuKerja::all();
-
+        $detailtemplateperilakukerja = $templateperilakukerja->detailTemplatePerilakuKerjas;
+        
         return view('detailtemplateperilakukerja.index', compact(['detailtemplateperilakukerja', 'templateperilakukerja']))
                 ->with('pustaka', $this->pustaka);
     }

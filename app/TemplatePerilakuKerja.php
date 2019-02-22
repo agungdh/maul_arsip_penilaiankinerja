@@ -13,4 +13,9 @@ class TemplatePerilakuKerja extends Model
     protected $fillable = [
                             'keterangan',
     					];
+
+	public function detailTemplatePerilakuKerjas()
+    {
+        return $this->hasMany('App\DetailTemplatePerilakuKerja','id_template_perilaku_kerja');
+    } 
 }
