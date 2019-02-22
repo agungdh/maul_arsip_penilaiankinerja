@@ -3,7 +3,7 @@
 -- Host: 127.0.0.1	Database: maul
 -- ------------------------------------------------------
 -- Server version 	5.5.5-10.1.35-MariaDB
--- Date: Fri, 22 Feb 2019 10:53:08 +0700
+-- Date: Fri, 22 Feb 2019 11:02:59 +0700
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -45,6 +45,36 @@ UNLOCK TABLES;
 COMMIT;
 
 -- Dumped table `detail_template_perilaku_kerja` with 9 row(s)
+--
+
+--
+-- Table structure for table `detail_template_tugas_pokok`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `detail_template_tugas_pokok` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_template_tugas_pokok` int(11) NOT NULL,
+  `tugas_pokok` varchar(191) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_template_tugas_pokok` (`id_template_tugas_pokok`),
+  CONSTRAINT `detail_template_tugas_pokok_ibfk_1` FOREIGN KEY (`id_template_tugas_pokok`) REFERENCES `template_tugas_pokok` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `detail_template_tugas_pokok`
+--
+
+LOCK TABLES `detail_template_tugas_pokok` WRITE;
+/*!40000 ALTER TABLE `detail_template_tugas_pokok` DISABLE KEYS */;
+SET autocommit=0;
+/*!40000 ALTER TABLE `detail_template_tugas_pokok` ENABLE KEYS */;
+UNLOCK TABLES;
+COMMIT;
+
+-- Dumped table `detail_template_tugas_pokok` with 0 row(s)
 --
 
 --
@@ -247,7 +277,7 @@ CREATE TABLE `perilaku_kerja` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_unsur_penilaian` int(11) NOT NULL,
   `perilaku_kerja` varchar(191) NOT NULL,
-  `nilai` int(11) NOT NULL,
+  `nilai` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `id_unsur_penilaian` (`id_unsur_penilaian`),
   CONSTRAINT `perilaku_kerja_ibfk_1` FOREIGN KEY (`id_unsur_penilaian`) REFERENCES `unsur_penilaian` (`id`)
@@ -355,6 +385,33 @@ UNLOCK TABLES;
 COMMIT;
 
 -- Dumped table `template_perilaku_kerja` with 2 row(s)
+--
+
+--
+-- Table structure for table `template_tugas_pokok`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `template_tugas_pokok` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `keterangan` varchar(191) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `template_tugas_pokok`
+--
+
+LOCK TABLES `template_tugas_pokok` WRITE;
+/*!40000 ALTER TABLE `template_tugas_pokok` DISABLE KEYS */;
+SET autocommit=0;
+/*!40000 ALTER TABLE `template_tugas_pokok` ENABLE KEYS */;
+UNLOCK TABLES;
+COMMIT;
+
+-- Dumped table `template_tugas_pokok` with 0 row(s)
 --
 
 --
@@ -497,4 +554,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Fri, 22 Feb 2019 10:53:08 +0700
+-- Dump completed on: Fri, 22 Feb 2019 11:02:59 +0700
