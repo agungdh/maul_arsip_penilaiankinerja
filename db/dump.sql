@@ -3,7 +3,7 @@
 -- Host: 127.0.0.1	Database: maul
 -- ------------------------------------------------------
 -- Server version 	5.5.5-10.1.35-MariaDB
--- Date: Fri, 22 Feb 2019 10:42:45 +0700
+-- Date: Fri, 22 Feb 2019 10:53:08 +0700
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,8 +26,10 @@ CREATE TABLE `detail_template_perilaku_kerja` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_template_perilaku_kerja` int(11) NOT NULL,
   `perilaku_kerja` varchar(191) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  KEY `id_template_perilaku_kerja` (`id_template_perilaku_kerja`),
+  CONSTRAINT `detail_template_perilaku_kerja_ibfk_1` FOREIGN KEY (`id_template_perilaku_kerja`) REFERENCES `template_perilaku_kerja` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +39,7 @@ CREATE TABLE `detail_template_perilaku_kerja` (
 LOCK TABLES `detail_template_perilaku_kerja` WRITE;
 /*!40000 ALTER TABLE `detail_template_perilaku_kerja` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `detail_template_perilaku_kerja` VALUES (3,3,'test 1'),(5,3,'test 3'),(6,3,'test 2'),(8,2,'Orientasi Pelayanan'),(9,2,'Integritas'),(10,2,'Komitmen'),(11,2,'Disiplin'),(12,2,'Kerjasama'),(13,2,'Kepemimpinan');
+INSERT INTO `detail_template_perilaku_kerja` VALUES (8,2,'Orientasi Pelayanan'),(9,2,'Integritas'),(10,2,'Komitmen'),(11,2,'Disiplin'),(12,2,'Kerjasama'),(13,2,'Kepemimpinan'),(17,5,'test 1'),(18,5,'test 2'),(19,5,'test 3');
 /*!40000 ALTER TABLE `detail_template_perilaku_kerja` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -337,7 +339,7 @@ CREATE TABLE `template_perilaku_kerja` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `keterangan` varchar(191) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -347,7 +349,7 @@ CREATE TABLE `template_perilaku_kerja` (
 LOCK TABLES `template_perilaku_kerja` WRITE;
 /*!40000 ALTER TABLE `template_perilaku_kerja` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `template_perilaku_kerja` VALUES (2,'Standar 2019'),(3,'Test 123');
+INSERT INTO `template_perilaku_kerja` VALUES (2,'Standar 2019'),(5,'test 123');
 /*!40000 ALTER TABLE `template_perilaku_kerja` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -495,4 +497,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Fri, 22 Feb 2019 10:42:45 +0700
+-- Dump completed on: Fri, 22 Feb 2019 10:53:08 +0700

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\TemplatePerilakuKerja;
+use App\DetailTemplatePerilakuKerja;
 
 class TemplatePerilakuKerjaController extends Controller
 {
@@ -71,7 +72,8 @@ class TemplatePerilakuKerjaController extends Controller
 
     public function destroy($id)
     {
-        TemplatePerilakuKerja::where(['id' => $id])->delete();
+        DetailTemplatePerilakuKerja::where('id_template_perilaku_kerja', $id)->delete();
+        TemplatePerilakuKerja::find($id)->delete();
 
         return redirect()->route('templateperilakukerja.index')->with('alert', [
                 'title' => 'BERHASIL !!!',
