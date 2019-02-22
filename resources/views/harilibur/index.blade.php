@@ -107,6 +107,16 @@ Hari Libur
                 {!! $message !!}
             </div>
 
+            @php
+            $class = $errors->has('deadline_hari') ? 'form-group has-error' : 'form-group';
+            $message = $errors->has('deadline_hari') ? '<span class="help-block">' . $errors->first('deadline_hari') . '</span>' : '';
+            @endphp
+            <div class="{{$class}}">
+                <label for="deadline_hari">Deadline Hari</label>
+                {!! Form::text('deadline_hari',$deadline_hari,['class'=> 'form-control','placeholder'=>'Isi Deadline Hari', 'id' => 'deadline_hari', 'readonly' => true]) !!}
+                {!! $message !!}
+            </div>
+
         </div>
 
         <div class="box-footer">

@@ -16,22 +16,44 @@ class HariLiburController extends Controller
 
     public function index(Request $request)
     {
+        $tanggal_mulai = '2019-02-10';
+        $hari_libur = HariLibur::where('tanggal', '>', $tanggal_mulai)->get();
+        $hari_libur_array = [];
+        foreach ($hari_libur as $item_harilibur) {
+            $hari_libur_array[] = $item_harilibur->tanggal;
+        }
+
+        $tanggal = date_create($tanggal_mulai);
+        $hari_kerja = [];
+        for ($i=1; $i <= 30; $i++) { 
+            date_add($tanggal, date_interval_create_from_date_string('1 days'));
+            if ( in_array(date_format($tanggal, 'Y-m-d'), $hari_libur_array) ||
+                date_format($tanggal, 'N') == 6 || date_format($tanggal, 'N') == 7 ) {
+                $i--;
+            } else {
+                $hari_kerja[] = date_format($tanggal, 'Y-m-d l');
+            }
+        }
+        dd([
+            $tanggal_mulai,
+            $hari_kerja,
+            date_format($tanggal, 'Y-m-d l')
+        ]);
+
+        die;
 
         $inputs = $request->all();
 
         $harilibur = HariLibur::all();
 
-        if ($inputs['tanggal'] != null && $inputs['durasi'] != null) {
-            $date=date_create($this->pustaka->parseTanggalIndo($inputs['tanggal']));
-            date_add($date,date_interval_create_from_date_string("{$inputs["durasi"]} days"));
-            $date = date_format($date,"Y-m-d");
-            $deadline = $this->pustaka->tanggalIndo($date);
-        } else {
-            $deadline = '';
+        $deadline = '';
+        $deadline_hari = '';
+        if ((isset($inputs['tanggal']) && $inputs['tanggal'] != null) && (isset($inputs['durasi']) && $inputs['durasi'] != null)) {
+            // 
         }
 
 
-        return view('harilibur.index', compact(['harilibur', 'inputs', 'deadline']))
+        return view('harilibur.index', compact(['harilibur', 'inputs', 'deadline', 'deadline_hari']))
                 ->with('pustaka', $this->pustaka);
     }
 
