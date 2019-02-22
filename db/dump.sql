@@ -3,7 +3,7 @@
 -- Host: 127.0.0.1	Database: maul
 -- ------------------------------------------------------
 -- Server version 	5.5.5-10.1.35-MariaDB
--- Date: Fri, 22 Feb 2019 10:11:18 +0700
+-- Date: Fri, 22 Feb 2019 10:42:45 +0700
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -27,7 +27,7 @@ CREATE TABLE `detail_template_perilaku_kerja` (
   `id_template_perilaku_kerja` int(11) NOT NULL,
   `perilaku_kerja` varchar(191) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,11 +37,12 @@ CREATE TABLE `detail_template_perilaku_kerja` (
 LOCK TABLES `detail_template_perilaku_kerja` WRITE;
 /*!40000 ALTER TABLE `detail_template_perilaku_kerja` DISABLE KEYS */;
 SET autocommit=0;
+INSERT INTO `detail_template_perilaku_kerja` VALUES (3,3,'test 1'),(5,3,'test 3'),(6,3,'test 2'),(8,2,'Orientasi Pelayanan'),(9,2,'Integritas'),(10,2,'Komitmen'),(11,2,'Disiplin'),(12,2,'Kerjasama'),(13,2,'Kepemimpinan');
 /*!40000 ALTER TABLE `detail_template_perilaku_kerja` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
 
--- Dumped table `detail_template_perilaku_kerja` with 0 row(s)
+-- Dumped table `detail_template_perilaku_kerja` with 9 row(s)
 --
 
 --
@@ -494,4 +495,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Fri, 22 Feb 2019 10:11:18 +0700
+-- Dump completed on: Fri, 22 Feb 2019 10:42:45 +0700
