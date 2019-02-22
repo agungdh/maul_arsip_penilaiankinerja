@@ -3,7 +3,7 @@
 -- Host: 127.0.0.1	Database: maul
 -- ------------------------------------------------------
 -- Server version 	5.5.5-10.1.35-MariaDB
--- Date: Fri, 22 Feb 2019 11:02:59 +0700
+-- Date: Fri, 22 Feb 2019 11:11:33 +0700
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -424,13 +424,13 @@ CREATE TABLE `tugas_pokok` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_skp` int(11) NOT NULL,
   `tugas_pokok` text NOT NULL,
-  `ak` varchar(191) NOT NULL,
-  `kuantitas` int(11) NOT NULL,
-  `id_output_tugas_pokok` int(11) NOT NULL,
-  `kualitas_mutu` int(11) NOT NULL,
-  `nilai_waktu` int(11) NOT NULL,
-  `id_satuan_waktu` int(11) NOT NULL,
-  `biaya` int(11) NOT NULL,
+  `ak` varchar(191) DEFAULT NULL,
+  `kuantitas` int(11) DEFAULT NULL,
+  `id_output_tugas_pokok` int(11) DEFAULT NULL,
+  `kualitas_mutu` int(11) DEFAULT NULL,
+  `nilai_waktu` int(11) DEFAULT NULL,
+  `id_satuan_waktu` int(11) DEFAULT NULL,
+  `biaya` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_output_tugas_pokok` (`id_output_tugas_pokok`),
   KEY `id_satuan_waktu` (`id_satuan_waktu`),
@@ -554,4 +554,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Fri, 22 Feb 2019 11:02:59 +0700
+-- Dump completed on: Fri, 22 Feb 2019 11:11:33 +0700
