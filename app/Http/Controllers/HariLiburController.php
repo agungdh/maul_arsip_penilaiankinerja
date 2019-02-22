@@ -16,32 +16,6 @@ class HariLiburController extends Controller
 
     public function index(Request $request)
     {
-        $tanggal_mulai = '2019-02-10';
-        $hari_libur = HariLibur::where('tanggal', '>', $tanggal_mulai)->get();
-        $hari_libur_array = [];
-        foreach ($hari_libur as $item_harilibur) {
-            $hari_libur_array[] = $item_harilibur->tanggal;
-        }
-
-        $tanggal = date_create($tanggal_mulai);
-        $hari_kerja = [];
-        for ($i=1; $i <= 30; $i++) { 
-            date_add($tanggal, date_interval_create_from_date_string('1 days'));
-            if ( in_array(date_format($tanggal, 'Y-m-d'), $hari_libur_array) ||
-                date_format($tanggal, 'N') == 6 || date_format($tanggal, 'N') == 7 ) {
-                $i--;
-            } else {
-                $hari_kerja[] = date_format($tanggal, 'Y-m-d l');
-            }
-        }
-        dd([
-            $tanggal_mulai,
-            $hari_kerja,
-            date_format($tanggal, 'Y-m-d l')
-        ]);
-
-        die;
-
         $inputs = $request->all();
 
         $harilibur = HariLibur::all();
@@ -49,7 +23,31 @@ class HariLiburController extends Controller
         $deadline = '';
         $deadline_hari = '';
         if ((isset($inputs['tanggal']) && $inputs['tanggal'] != null) && (isset($inputs['durasi']) && $inputs['durasi'] != null)) {
-            // 
+            $tanggal_mulai = $this->pustaka->parseTanggalIndo($inputs['tanggal']);
+            $hari_libur = HariLibur::where('tanggal', '>', $tanggal_mulai)->get();
+            $hari_libur_array = [];
+            foreach ($hari_libur as $item_harilibur) {
+                $hari_libur_array[] = $item_harilibur->tanggal;
+            }
+
+            $tanggal = date_create($tanggal_mulai);
+            $hari_kerja = [];
+            for ($i=1; $i <= $inputs['durasi']; $i++) { 
+                date_add($tanggal, date_interval_create_from_date_string('1 days'));
+                if ( in_array(date_format($tanggal, 'Y-m-d'), $hari_libur_array) ||
+                    date_format($tanggal, 'N') == 6 || date_format($tanggal, 'N') == 7 ) {
+                    $i--;
+                } else {
+                    $hari_kerja[] = date_format($tanggal, 'Y-m-d l');
+                }
+            }
+            // dd([
+            //     $tanggal_mulai,
+            //     $hari_kerja,
+            //     date_format($tanggal, 'Y-m-d l')
+            // ]);
+            $deadline = $this->pustaka->tanggalIndo(date_format($tanggal, 'Y-m-d'));
+            $deadline_hari = date_format($tanggal, 'l');
         }
 
 
