@@ -1,11 +1,11 @@
 @extends('template.template')
 
 @section('title')
-Template Perilaku Kerja
+Detail Template Perilaku Kerja
 @endsection
 
 @section('nav')
-@include('templateperilakukerja.nav')
+@include('detailtemplateperilakukerja.nav')
 @endsection
 
 @section('content')
@@ -13,33 +13,29 @@ Template Perilaku Kerja
 	<div class="col-md-12">
 		<div class="box box-primary">
             <div class="box-header">
-              <h3 class="box-title">Data Template Perilaku Kerja</h3>
+              <h3 class="box-title">Data Detail Template Perilaku Kerja</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-            	<a class="btn btn-success btn-sm" href="{{route('templateperilakukerja.create')}}">
+            	<a class="btn btn-success btn-sm" href="{{route('detailtemplateperilakukerja.create', $templateperilakukerja->id)}}">
                   <i class="glyphicon glyphicon-plus"></i> Tambah
                 </a><br><br>
               <table class="table table-bordered table-hover datatable">
                 <thead>
 	                <tr>
-	                  <th>Keterangan</th>
+	                  <th>Perilaku Kerja</th>
 	                  <th>Proses</th>
 	                </tr>
                 </thead>
                 <tbody>
-                	@foreach($templateperilakukerja as $item)
+                	@foreach($detailtemplateperilakukerja as $item)
                 	<tr>
-                		<td>{{$item->keterangan}}</td>
+                		<td>{{$item->perilaku_kerja}}</td>
                 		
                 		<td>
 
-			                {!! Form::open(['id' => 'formHapus' . $item->id, 'route' => ['templateperilakukerja.destroy', $item->id], 'method' => 'delete']) !!}
-	                			<a class="btn btn-default btn-sm" href="{{route('detailtemplateperilakukerja.index', $item->id)}}">
-                                  <i class="glyphicon glyphicon-list"></i> Detail
-                                </a>
-
-                                <a class="btn btn-primary btn-sm" href="{{route('templateperilakukerja.edit', $item->id)}}">
+			                {!! Form::open(['id' => 'formHapus' . $item->id, 'route' => ['detailtemplateperilakukerja.destroy', $item->id], 'method' => 'delete']) !!}
+	                			<a class="btn btn-primary btn-sm" href="{{route('detailtemplateperilakukerja.edit', $item->id)}}">
 				                  <i class="glyphicon glyphicon-pencil"></i> Edit
 				                </a>
 

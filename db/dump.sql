@@ -3,7 +3,7 @@
 -- Host: 127.0.0.1	Database: maul
 -- ------------------------------------------------------
 -- Server version 	5.5.5-10.1.35-MariaDB
--- Date: Fri, 22 Feb 2019 10:02:53 +0700
+-- Date: Fri, 22 Feb 2019 10:11:18 +0700
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -494,4 +494,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Fri, 22 Feb 2019 10:02:54 +0700
+-- Dump completed on: Fri, 22 Feb 2019 10:11:18 +0700

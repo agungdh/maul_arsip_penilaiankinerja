@@ -19,6 +19,13 @@ Route::get('/test/nilai/{nilai}', function ($nilai) {
     echo \App\Helper\Nilai::keterangan($nilai);
 });
 
+Route::get('/detailtemplateperilakukerja/{id_templateperilakukerja}', 'DetailTemplatePerilakuKerjaController@index')->name('detailtemplateperilakukerja.index');
+Route::get('/detailtemplateperilakukerja/{id_templateperilakukerja}/create', 'DetailTemplatePerilakuKerjaController@create')->name('detailtemplateperilakukerja.create');
+Route::post('/detailtemplateperilakukerja/{id_templateperilakukerja}', 'DetailTemplatePerilakuKerjaController@store')->name('detailtemplateperilakukerja.store');
+Route::get('/detailtemplateperilakukerja/{id_detailtemplateperilakukerja}/edit', 'DetailTemplatePerilakuKerjaController@edit')->name('detailtemplateperilakukerja.edit');
+Route::put('/detailtemplateperilakukerja/{id_detailtemplateperilakukerja}', 'DetailTemplatePerilakuKerjaController@update')->name('detailtemplateperilakukerja.update');
+Route::delete('/detailtemplateperilakukerja/{id_detailtemplateperilakukerja}', 'DetailTemplatePerilakuKerjaController@destroy')->name('detailtemplateperilakukerja.destroy');
+
 Route::resources([
 	'/jabatan' => 'JabatanController',
 	'/unit' => 'UnitController',

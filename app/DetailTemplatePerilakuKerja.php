@@ -12,6 +12,11 @@ class DetailTemplatePerilakuKerja extends Model
 
     protected $fillable = [
                             'id_template_perilaku_kerja',
-                            'keterangan',
+                            'perilaku_kerja',
     					];
+
+	public function templatePerilakuKerja()
+    {
+        return $this->belongsTo('App\TemplatePerilakuKerja','id_template_perilaku_kerja');
+    }    					
 }
