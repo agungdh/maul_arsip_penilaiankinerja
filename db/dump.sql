@@ -3,7 +3,7 @@
 -- Host: 127.0.0.1	Database: maul
 -- ------------------------------------------------------
 -- Server version 	5.5.5-10.1.35-MariaDB
--- Date: Fri, 22 Feb 2019 11:11:33 +0700
+-- Date: Mon, 25 Feb 2019 10:52:26 +0700
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -60,7 +60,7 @@ CREATE TABLE `detail_template_tugas_pokok` (
   PRIMARY KEY (`id`),
   KEY `id_template_tugas_pokok` (`id_template_tugas_pokok`),
   CONSTRAINT `detail_template_tugas_pokok_ibfk_1` FOREIGN KEY (`id_template_tugas_pokok`) REFERENCES `template_tugas_pokok` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -397,7 +397,7 @@ CREATE TABLE `template_tugas_pokok` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `keterangan` varchar(191) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -407,11 +407,12 @@ CREATE TABLE `template_tugas_pokok` (
 LOCK TABLES `template_tugas_pokok` WRITE;
 /*!40000 ALTER TABLE `template_tugas_pokok` DISABLE KEYS */;
 SET autocommit=0;
+INSERT INTO `template_tugas_pokok` VALUES (2,'Standar 2019');
 /*!40000 ALTER TABLE `template_tugas_pokok` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
 
--- Dumped table `template_tugas_pokok` with 0 row(s)
+-- Dumped table `template_tugas_pokok` with 1 row(s)
 --
 
 --
@@ -554,4 +555,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Fri, 22 Feb 2019 11:11:33 +0700
+-- Dump completed on: Mon, 25 Feb 2019 10:52:26 +0700
