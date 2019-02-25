@@ -15,4 +15,14 @@ class SKP extends Model
                             'id_pegawai_penilai',
                             'id_pegawai_dinilai',
     					];
+
+	public function pegawaiPenilai()
+    {
+        return $this->belongsTo('App\Pegawai','id_pegawai_penilai');
+    }
+
+    public function pegawaiDinilai()
+    {
+        return $this->belongsTo('App\Pegawai','id_pegawai_dinilai');
+    }
 }

@@ -1,0 +1,1 @@
+<li><a href="{{ route('skp.index') }}"><i class="fa fa-home"></i> Sasaran Kerja Pegawai</a></li>

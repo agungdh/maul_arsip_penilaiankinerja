@@ -42,6 +42,7 @@ Route::resources([
 	'/templateperilakukerja' => 'TemplatePerilakuKerjaController',
 	'/templatetugaspokok' => 'TemplateTugasPokokController',
 	'/outputtugaspokok' => 'OutputTugasPokokController',
+	'/skp' => 'SKPController',
 
 	'/harilibur' => 'HariLiburController',
 ]);
