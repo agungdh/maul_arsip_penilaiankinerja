@@ -3,7 +3,7 @@
 -- Host: 127.0.0.1	Database: maul
 -- ------------------------------------------------------
 -- Server version 	5.5.5-10.1.35-MariaDB
--- Date: Mon, 25 Feb 2019 11:06:32 +0700
+-- Date: Mon, 25 Feb 2019 17:41:00 +0700
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -60,7 +60,7 @@ CREATE TABLE `detail_template_tugas_pokok` (
   PRIMARY KEY (`id`),
   KEY `id_template_tugas_pokok` (`id_template_tugas_pokok`),
   CONSTRAINT `detail_template_tugas_pokok_ibfk_1` FOREIGN KEY (`id_template_tugas_pokok`) REFERENCES `template_tugas_pokok` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -214,7 +214,7 @@ CREATE TABLE `pegawai` (
   CONSTRAINT `pegawai_ibfk_1` FOREIGN KEY (`id_jabatan`) REFERENCES `jabatan` (`id`),
   CONSTRAINT `pegawai_ibfk_2` FOREIGN KEY (`id_pangkat`) REFERENCES `pangkat` (`id`),
   CONSTRAINT `pegawai_ibfk_3` FOREIGN KEY (`id_unit`) REFERENCES `unit` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -224,7 +224,7 @@ CREATE TABLE `pegawai` (
 LOCK TABLES `pegawai` WRITE;
 /*!40000 ALTER TABLE `pegawai` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `pegawai` VALUES (2,'1234','1234',5,3,2),(3,'1234','12344',5,3,2);
+INSERT INTO `pegawai` VALUES (4,'Maul','12345678',6,4,2),(5,'Dian','6789',5,2,2);
 /*!40000 ALTER TABLE `pegawai` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -343,7 +343,7 @@ CREATE TABLE `skp` (
   KEY `id_pegawai_penilai` (`id_pegawai_penilai`),
   CONSTRAINT `skp_ibfk_1` FOREIGN KEY (`id_pegawai_dinilai`) REFERENCES `pegawai` (`id`),
   CONSTRAINT `skp_ibfk_2` FOREIGN KEY (`id_pegawai_penilai`) REFERENCES `pegawai` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -353,11 +353,12 @@ CREATE TABLE `skp` (
 LOCK TABLES `skp` WRITE;
 /*!40000 ALTER TABLE `skp` DISABLE KEYS */;
 SET autocommit=0;
+INSERT INTO `skp` VALUES (6,'2002',4,5);
 /*!40000 ALTER TABLE `skp` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
 
--- Dumped table `skp` with 0 row(s)
+-- Dumped table `skp` with 1 row(s)
 --
 
 --
@@ -398,7 +399,7 @@ CREATE TABLE `template_tugas_pokok` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `keterangan` varchar(191) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -440,7 +441,7 @@ CREATE TABLE `tugas_pokok` (
   CONSTRAINT `tugas_pokok_ibfk_1` FOREIGN KEY (`id_output_tugas_pokok`) REFERENCES `output_tugas_pokok` (`id`),
   CONSTRAINT `tugas_pokok_ibfk_2` FOREIGN KEY (`id_satuan_waktu`) REFERENCES `satuan_waktu` (`id`),
   CONSTRAINT `tugas_pokok_ibfk_3` FOREIGN KEY (`id_skp`) REFERENCES `skp` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -556,4 +557,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Mon, 25 Feb 2019 11:06:32 +0700
+-- Dump completed on: Mon, 25 Feb 2019 17:41:00 +0700
