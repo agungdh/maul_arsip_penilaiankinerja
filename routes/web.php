@@ -41,6 +41,7 @@ Route::resources([
 	'/satuanwaktu' => 'SatuanWaktuController',
 	'/templateperilakukerja' => 'TemplatePerilakuKerjaController',
 	'/templatetugaspokok' => 'TemplateTugasPokokController',
+	'/outputtugaspokok' => 'OutputTugasPokokController',
 
 	'/harilibur' => 'HariLiburController',
 ]);

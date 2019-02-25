@@ -1,0 +1,1 @@
+<li><a href="{{ route('outputtugaspokok.index') }}"><i class="fa fa-home"></i> Output Tugas Pokok</a></li>
