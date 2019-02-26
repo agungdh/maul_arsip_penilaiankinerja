@@ -24,17 +24,17 @@ Sasaran Kerja Pegawai
                 <thead>
 	                <tr>
 	                  <th>Tahun</th>
-                      <th>Penilai Penilai</th>
-                      <th>Pegawai Yang Dinilai</th>
+                    <th>Penilai Penilai</th>
+                    <th>Pegawai Yang Dinilai</th>
 	                  <th>Proses</th>
 	                </tr>
                 </thead>
                 <tbody>
                 	@foreach($skp as $item)
                 	<tr>
-                        <td>{{$item->tahun}}</td>
-                        <td>{{$item->pegawaiPenilai->nama}} [{{$item->pegawaiPenilai->nip}}]</td>
-                		<td>{{$item->pegawaiDinilai->nama}} [{{$item->pegawaiDinilai->nip}}]</td>
+                    <td>{{$item->tahun}}</td>
+                    <td>{{$item->pegawaiPenilai->nama}} [{{$item->pegawaiPenilai->nip}}]</td>
+            		    <td>{{$item->pegawaiDinilai->nama}} [{{$item->pegawaiDinilai->nip}}]</td>
                 		
                 		<td>
 

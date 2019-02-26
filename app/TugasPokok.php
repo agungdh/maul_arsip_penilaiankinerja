@@ -21,4 +21,9 @@ class TugasPokok extends Model
                             'id_satuan_waktu',
                             'biaya',
     					];
+
+    public function SKP()
+    {
+        return $this->belongsTo('App\SKP','id_skp');
+    } 
 }

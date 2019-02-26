@@ -25,4 +25,9 @@ class SKP extends Model
     {
         return $this->belongsTo('App\Pegawai','id_pegawai_dinilai');
     }
+
+    public function tugasPokoks()
+    {
+        return $this->hasMany('App\TugasPokok','id_skp');
+    } 
 }
