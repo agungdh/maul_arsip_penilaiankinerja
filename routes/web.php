@@ -33,6 +33,13 @@ Route::get('/detailtemplatetugaspokok/{id_detailtemplatetugaspokok}/edit', 'Deta
 Route::put('/detailtemplatetugaspokok/{id_detailtemplatetugaspokok}', 'DetailTemplateTugasPokokController@update')->name('detailtemplatetugaspokok.update');
 Route::delete('/detailtemplatetugaspokok/{id_detailtemplatetugaspokok}', 'DetailTemplateTugasPokokController@destroy')->name('detailtemplatetugaspokok.destroy');
 
+Route::get('/tugaspokok/{id_skp}', 'TugasPokokController@index')->name('tugaspokok.index');
+Route::get('/tugaspokok/{id_skp}/create', 'TugasPokokController@create')->name('tugaspokok.create');
+Route::post('/tugaspokok/{id_skp}', 'TugasPokokController@store')->name('tugaspokok.store');
+Route::get('/tugaspokok/{id_tugaspokok}/edit', 'TugasPokokController@edit')->name('tugaspokok.edit');
+Route::put('/tugaspokok/{id_tugaspokok}', 'TugasPokokController@update')->name('tugaspokok.update');
+Route::delete('/tugaspokok/{id_tugaspokok}', 'TugasPokokController@destroy')->name('tugaspokok.destroy');
+
 Route::resources([
 	'/jabatan' => 'JabatanController',
 	'/unit' => 'UnitController',

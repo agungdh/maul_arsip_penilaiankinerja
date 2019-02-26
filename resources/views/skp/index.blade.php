@@ -39,6 +39,10 @@ Sasaran Kerja Pegawai
                 		<td>
 
 			                {!! Form::open(['id' => 'formHapus' . $item->id, 'route' => ['skp.destroy', $item->id], 'method' => 'delete']) !!}
+                        <a class="btn btn-default btn-sm" href="{{route('tugaspokok.index', $item->id)}}">
+                          <i class="glyphicon glyphicon-list"></i> Tugas Pokok
+                        </a>
+
 	                			<a class="btn btn-primary btn-sm" href="{{route('skp.edit', $item->id)}}">
 				                  <i class="glyphicon glyphicon-pencil"></i> Edit
 				                </a>
